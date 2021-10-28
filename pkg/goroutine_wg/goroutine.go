@@ -1,4 +1,4 @@
-package coroutinewg
+package goroutinewg
 
 import (
 	"fmt"
