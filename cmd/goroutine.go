@@ -16,7 +16,6 @@ var goroutineCmd = &cobra.Command{
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 
-		fmt.Printf("%d", amount)
 		if amount != 0 {
 			user := goroutinewg.User{}
 			wg := &sync.WaitGroup{}
