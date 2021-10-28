@@ -16,7 +16,7 @@ var goroutineCmd = &cobra.Command{
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 
-		if amount != 0 {
+		if amount != 0 && amount > 0 {
 			user := goroutinewg.User{}
 			wg := &sync.WaitGroup{}
 			wg.Add(amount)
@@ -29,6 +29,7 @@ var goroutineCmd = &cobra.Command{
 			fmt.Println("Hello everyone!!")
 			return
 		}
+		fmt.Println("illegal")
 	},
 }
 
