@@ -12,7 +12,7 @@ var amount int
 
 var goroutineCmd = &cobra.Command{
 	Use:   "goroutine",
-	Short: "以多線程方式，快速取得多個使用者回應",
+	Short: "以協程方式，快速取得多個使用者回應",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 
