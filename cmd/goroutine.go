@@ -44,11 +44,12 @@ var goroutineCmd = &cobra.Command{
 			fmt.Println("Hello everyone!!")
 			return
 		}
-		fmt.Println("illegal")
+		fmt.Println("可使用 -h 查看指令參數")
+
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(goroutineCmd)
-	goroutineCmd.Flags().IntVarP(&amount, "amount", "m", amount, "指定的數量")
+	goroutineCmd.Flags().IntVarP(&amount, "amount", "m", amount, "指定的數量(必須大於 0)")
 }
