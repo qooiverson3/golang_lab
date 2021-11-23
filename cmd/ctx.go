@@ -18,6 +18,7 @@ package cmd
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/spf13/cobra"
 )
@@ -47,10 +48,12 @@ var ctxCmd = &cobra.Command{
 
 		for i := 0; i < len(list); i++ {
 			go func(c context.Context, n string) {
+
 				select {
 				case <-c.Done():
 					return
 				default:
+
 					d := <-ch_data
 					if len(d) == amount {
 						ch_data <- d
@@ -58,6 +61,8 @@ var ctxCmd = &cobra.Command{
 					}
 					d = append(d, n)
 					ch_data <- d
+					fmt.Printf("i got %s\n", n)
+					time.Sleep(1 * time.Second)
 				}
 			}(ctx, list[i])
 		}
