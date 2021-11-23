@@ -28,8 +28,7 @@ var channelCmd = &cobra.Command{
 	Short: "channel lab",
 	Long:  `make channel test`,
 	Run: func(cmd *cobra.Command, args []string) {
-		var amount int
-		amount = 10
+		amount := 10
 		data := make(chan int, amount)
 		wg := sync.WaitGroup{}
 		wg.Add(amount)
